@@ -3,7 +3,7 @@ import './App.css'
 import MainContent from './components/MainContent'
 import DeviceDetails from './components/DeviceDetails';
 import Footer from './components/Footer';
-import AboutUs from './components/aboutUs';
+import AboutUs from './components/AboutUs';
 import { BrowserRouter, Router, Routes, Route } from 'react-router-dom';
 import ContactPage from './components/Contact';
 import React, { useState } from 'react';
