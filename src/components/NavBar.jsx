@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const NavBar = ({queryHandler}) => {
 
   const [open, setOpen] = useState(false)
-  const [openSearch, setOpenSearch] = useState('false');
+  const [openSearch, setOpenSearch] = useState(false);
 
    const handleSearchInputChange = (e) => {
     const query = e.target.value
