@@ -60,7 +60,7 @@ const SideBar = ({filterByBrandHandler, filterByCategoryHandler}) => {
                   <ul className={`${dropMenu? 'flex' : 'hidden'} flex-col gap-3 text-sm ml-4 border-b-2 pb-2 w-[60%] durration-300`}>
                     {
                       filterCategoriesAccessories.map(item => 
-                      <li key={item.id} onClick={() => filterByCategoryHandler(item.value)} className='cursor-pointer'></li>
+                      <li key={item.id} onClick={() => filterByCategoryHandler(item.value)} className='cursor-pointer'>{item.value}</li>
                       )
                     }
                   </ul>
