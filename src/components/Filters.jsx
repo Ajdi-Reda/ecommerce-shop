@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import dropDown from '../assets/dropDown.svg'
-import { filterMobile, filterLaptop } from '../assets/Data/ListItems';
+import { filterMobile, filterLaptop, filterTablet } from '../assets/Data/ListItems';
 import { Context } from '../App';
 
 const Filters = ({filterBrandHandler}) => {
@@ -11,6 +11,9 @@ const Filters = ({filterBrandHandler}) => {
 
           useEffect(() => {
             switch(context.category) {
+              case 'Tablets':
+                setFilterItems(filterTablet);
+                break;
               case 'Laptops & Imacs':
                 setFilterItems(filterLaptop);
                 break;

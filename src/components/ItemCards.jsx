@@ -11,10 +11,12 @@ const ItemCards = ({ brand }) => {
   const mobileData = MobileData();
   const [filteredData, setFilteredData] = useState([]);
   const [isAccessories, setIsAccessories] = useState(false)
+   useEffect(() => {
+    setIsAccessories(category?.toLowerCase().includes('headphones' || 'keyboard'|| 'cases'));
+  }, [category]);
 
   useEffect(() => {
     const filteredResults = mobileData?.filter((item) => {
-      setIsAccessories(category?.toLowerCase().includes(item.category?.toLowerCase()))
       const matchesSearchQuery = item.name?.toLowerCase().includes(query.toLowerCase());
       const matchesBrand = brand ? item.brand?.toLowerCase() === brand?.toLowerCase() : true;
       const matchesCategory = category
@@ -22,8 +24,14 @@ const ItemCards = ({ brand }) => {
         : true;
       return matchesSearchQuery && matchesBrand && matchesCategory;
     });
-    setFilteredData(filteredResults);
+    setFilteredData(filteredResults|| []);
+    category? brand = '' : true;
   }, [query, mobileData, brand, category]);
+  useEffect(() => {
+    setFilteredData(mobileData || []); // Reset the filteredData when the category changes
+  }, [category, mobileData]);
+
+  
 
   return (
     <div className="md:w-[70%] mt-40 justify-center">

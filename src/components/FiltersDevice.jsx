@@ -1,5 +1,5 @@
 import React, {useState, useContext, useEffect} from 'react'
-import { filterMobile, filterLaptop } from '../assets/Data/ListItems';
+import { filterMobile, filterLaptop, filterTablet } from '../assets/Data/ListItems';
 import dropDown from '../assets/dropDown.svg';
 import close from '../assets/close.svg'
 import { Context } from '../App';
@@ -15,6 +15,9 @@ const FiltersDevice = ({filterBrandHandler}) => {
 
           useEffect(() => {
             switch(context.category) {
+              case 'Tablets':
+                setFilterItems(filterTablet);
+                break;
               case 'Laptops & Imacs':
                 setFilterItems(filterLaptop);
                 break;

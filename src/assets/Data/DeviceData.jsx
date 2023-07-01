@@ -9,7 +9,6 @@ const DeviceData = () => {
 
   useEffect(() => {
     let category = 'mobile';
-    console.log(context.category)
 
     switch (context.category) {
       case 'Tablets':

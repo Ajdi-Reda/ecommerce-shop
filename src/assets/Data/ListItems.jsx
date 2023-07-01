@@ -32,6 +32,18 @@ export const filterMobile = [
     },
 ]
 
+export const filterTablet = [
+    {
+        id: 'samsung',
+        value: 'Samsung'
+    },
+    {
+        id: 'apple',
+        value: 'Apple'
+    },
+    
+]
+
 export const filterLaptop = [
     {
         id: 'lenovo',
